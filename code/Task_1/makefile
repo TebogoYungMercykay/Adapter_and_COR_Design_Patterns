@@ -1,18 +1,16 @@
-CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra
-
-SRC_FILE = main.cpp
-TARGET = main
-
-.PHONY: all clean
-
-all: $(TARGET)
-
-$(TARGET): $(SRC_FILE)
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-run: $(TARGET)
-	./$(TARGET)
+main:
+	g++ -g *.cpp -std=c++98 -pedantic -o main
 
 clean:
-	rm -f $(TARGET)
+	rm -f *.o *.tar.gz main
+	reset
+	clear
+
+run:
+	valgrind --leak-check=full ./main
+
+tar:
+	tar -cvz *.* -f PatternCode.tar.gz
+
+untar:
+	tar -zxvf *.tar.gz
