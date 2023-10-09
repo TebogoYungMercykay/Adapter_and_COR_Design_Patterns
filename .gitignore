@@ -3,4 +3,5 @@
 *.tar
 *.tar.gz
 *.zip
+*.o
 *.md
