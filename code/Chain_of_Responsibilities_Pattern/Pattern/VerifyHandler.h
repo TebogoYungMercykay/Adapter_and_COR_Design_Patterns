@@ -8,5 +8,5 @@ class VerifyHandler : public Handler {
         void handle_request(const std::string& request);
 
     private:
-        NonceHandler* nonce_handler_;
+        NonceHandler* nonce_handler;
 };
