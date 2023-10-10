@@ -1,7 +1,7 @@
 #pragma once
 #include "Handler.h"
 
-class NonceHandler : public Handler {
+class NonceRequestHandler : public Handler {
     public:
         void handle_request(const std::string& request);
         bool validate_nonce(const std::string& input_nonce) const;

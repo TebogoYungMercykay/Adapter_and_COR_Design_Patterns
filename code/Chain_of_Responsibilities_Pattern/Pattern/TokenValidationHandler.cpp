@@ -1,9 +1,9 @@
-#include "TokenHandler.h"
+#include "TokenValidationHandler.h"
 #include <cstdlib>
 #include <ctime>
 #include <sstream>
 
-void TokenHandler::handle_request(const std::string& request) {
+void TokenValidationHandler::handle_request(const std::string& request) {
     if (request == "4") {
         std::string random_token = generate_random_token();
         std::cout << "Generated random token: " << random_token << std::endl;
@@ -23,18 +23,18 @@ void TokenHandler::handle_request(const std::string& request) {
     }
 }
 
-std::string TokenHandler::generate_random_token() {
+std::string TokenValidationHandler::generate_random_token() {
     srand(time(NULL));
     int random_value = rand() % 100000;
     return to_string(random_value);
 }
 
-std::string TokenHandler::to_string(int value) {
+std::string TokenValidationHandler::to_string(int value) {
     std::stringstream ss;
     ss << value;
     return ss.str();
 }
 
-bool TokenHandler::validate_token(const std::string& user_token, const std::string& generated_token) {
+bool TokenValidationHandler::validate_token(const std::string& user_token, const std::string& generated_token) {
     return user_token == generated_token;
 }
