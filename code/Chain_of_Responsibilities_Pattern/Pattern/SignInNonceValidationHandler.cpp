@@ -1,7 +1,7 @@
-#include "VerifyHandler.h"
+#include "SignInNonceValidationHandler.h"
 #include <iostream>
 
-VerifyHandler::VerifyHandler(NonceHandler* nonce_handler) {
+SignInNonceValidationHandler::SignInNonceValidationHandler(NonceHandler* nonce_handler) {
     if (nonce_handler == NULL) {
         throw std::invalid_argument("NonceHandler cannot be null.");
     } else {
@@ -9,7 +9,7 @@ VerifyHandler::VerifyHandler(NonceHandler* nonce_handler) {
     }
 }
 
-void VerifyHandler::handle_request(const std::string& request) {
+void SignInNonceValidationHandler::handle_request(const std::string& request) {
     if (request == "2") {
         std::string input_nonce;
         std::cout << "Enter the nonce for validation: ";
