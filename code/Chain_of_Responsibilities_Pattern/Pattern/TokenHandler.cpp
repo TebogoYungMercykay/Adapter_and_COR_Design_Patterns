@@ -13,13 +13,13 @@ void TokenHandler::handle_request(const std::string& request) {
         std::cout << "Enter the token for validation: ";
         std::cin >> user_token;
 
-        if (validate_token(user_token, random_token)) {
+        if (this->validate_token(user_token, random_token)) {
             std::cout << "Token validation successful." << std::endl;
         } else {
             std::cout << "Token validation failed." << std::endl;
         }
-    } else if (next_handler) {
-        next_handler->handle_request(request);
+    } else if (this->next_handler != NULL) {
+        this->next_handler->handle_request(request);
     }
 }
 
