@@ -1,9 +1,9 @@
 #include "SignInNonceValidationHandler.h"
 #include <iostream>
 
-SignInNonceValidationHandler::SignInNonceValidationHandler(NonceHandler* nonce_handler) {
+SignInNonceValidationHandler::SignInNonceValidationHandler(RequestProcessingHandler* nonce_handler) {
     if (nonce_handler == NULL) {
-        throw std::invalid_argument("NonceHandler cannot be null.");
+        throw std::invalid_argument("RequestProcessingHandler cannot be null.");
     } else {
         this->nonce_handler = nonce_handler;
     }

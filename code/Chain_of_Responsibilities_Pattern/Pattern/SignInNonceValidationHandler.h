@@ -1,12 +1,12 @@
 #pragma once
-#include "Handler.h"
-#include "NonceHandler.h"
+#include "AuthenticationHandler.h"
+#include "RequestProcessingHandler.h"
 
-class SignInNonceValidationHandler : public Handler {
+class SignInNonceValidationHandler : public AuthenticationHandler {
     public:
-        SignInNonceValidationHandler(NonceHandler* nonce_handler);
+        SignInNonceValidationHandler(RequestProcessingHandler* nonce_handler);
         void handle_request(const std::string& request);
 
     private:
-        NonceHandler* nonce_handler;
+        RequestProcessingHandler* nonce_handler;
 };

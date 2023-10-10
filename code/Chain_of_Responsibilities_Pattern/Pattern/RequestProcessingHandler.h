@@ -1,7 +1,7 @@
 #pragma once
-#include "Handler.h"
+#include "AuthenticationHandler.h"
 
-class NonceRequestHandler : public Handler {
+class RequestProcessingHandler : public AuthenticationHandler {
     public:
         void handle_request(const std::string& request);
         bool validate_nonce(const std::string& input_nonce) const;

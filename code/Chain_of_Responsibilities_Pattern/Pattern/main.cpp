@@ -1,14 +1,14 @@
-#include "NonceHandler.h"
-#include "VerifyHandler.h"
+#include "RequestProcessingHandler.h"
+#include "SignInNonceValidationHandler.h"
 #include "ProcessRequestHandler.h"
-#include "TokenHandler.h"
+#include "TokenValidationHandler.h"
 
 int main() {
     // Creating the handlers
-    NonceHandler* nonce_handler = new NonceHandler();
-    VerifyHandler* verify_handler = new VerifyHandler(nonce_handler);
+    RequestProcessingHandler* nonce_handler = new RequestProcessingHandler();
+    SignInNonceValidationHandler* verify_handler = new SignInNonceValidationHandler(nonce_handler);
     ProcessRequestHandler* process_handler = new ProcessRequestHandler();
-    TokenHandler* token_handler = new TokenHandler();
+    TokenValidationHandler* token_handler = new TokenValidationHandler();
 
     // Connecting the handlers in the chain
     nonce_handler->set_next(verify_handler);

@@ -1,7 +1,7 @@
 #pragma once
-#include "Handler.h"
+#include "AuthenticationHandler.h"
 
-class TokenValidationHandler : public Handler {
+class TokenValidationHandler : public AuthenticationHandler {
     public:
         void handle_request(const std::string& request);
 
