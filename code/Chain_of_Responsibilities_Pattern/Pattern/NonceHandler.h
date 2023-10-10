@@ -10,5 +10,5 @@ class NonceHandler : public Handler {
     private:
         std::string to_string(int value);
         std::string generate_nonce();
-        std::string nonce_;
+        std::string nonce;
 };
