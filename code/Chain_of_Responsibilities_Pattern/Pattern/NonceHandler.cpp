@@ -4,21 +4,30 @@
 #include <sstream>
 
 void NonceHandler::handle_request(const std::string& request) {
-    // Code Here...
+    if (request == "1") {
+        nonce_ = generate_nonce();
+        std::cout << "Generated nonce: " << nonce_ << std::endl;
+    } else if (next_handler) {
+        next_handler->handle_request(request);
+    }
 }
 
 bool NonceHandler::validate_nonce(const std::string& input_nonce) const {
-    // Code Here...
+    return input_nonce == nonce_;
 }
 
 const std::string& NonceHandler::get_nonce() const {
-    // Code Here...
+    return nonce_;
 }
 
 std::string NonceHandler::to_string(int value) {
-    // Code Here...
+    std::stringstream ss;
+    ss << value;
+    return ss.str();
 }
 
 std::string NonceHandler::generate_nonce() {
-    // Code Here...
+    srand(time(NULL));
+    int random_value = rand() % 100000;
+    return to_string(random_value);
 }
