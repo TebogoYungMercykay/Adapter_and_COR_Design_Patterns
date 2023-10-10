@@ -10,7 +10,7 @@ run:
 	valgrind --leak-check=full ./main
 
 tar:
-	tar -cvz *.* -f PatternCode.tar.gz
+	tar -cvz *.* makefile -f Practical_04_COS214.tar.gz
 
 untar:
 	tar -zxvf *.tar.gz
