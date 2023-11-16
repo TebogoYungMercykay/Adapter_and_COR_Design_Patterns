@@ -1,4 +1,4 @@
-# Desihgn Patterns
+# Design Patterns
 
 This repository contains implementations of two commonly used design patterns: Chain of Responsibility and Adapter. Each design pattern is implemented in separate folders within the repository.
 
