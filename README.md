@@ -1,4 +1,4 @@
-# COS214_Practical_04
+# Desihgn Patterns
 
 This repository contains implementations of two commonly used design patterns: Chain of Responsibility and Adapter. Each design pattern is implemented in separate folders within the repository.
 
